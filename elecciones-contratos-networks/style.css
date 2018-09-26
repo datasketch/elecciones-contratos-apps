@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro');
+
+.shiny-output-error {
+    visibility: hidden;
+}
+
+.loadmessage {
+    position: fixed;
+    width: 5%;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+html,
+body {
+    background-color: #ffffff;
+    /*box-sizing: border-box;*/
+    /*width: 90%;*/
+    /*height: auto;*/
+    font-family: 'Maven Pro', sans-serif;
+    /*margin: 0 auto;*/
+}
+
+#node_profile h2 {
+  border-bottom: 2px solid #E35A2A;
+  display: inline-block;
+  color: #E35A2A;
+  font-family: 'Maven Pro', sans-serif;
+  font-weight: 700;
+  margin: 0 0 15px;
+  padding: 5px 0;
+}
+
+#node_profile .col-sm-6:nth-of-type(1) p {
+  color: #b1c2de;
+  font-family: 'Maven Pro', sans-serif;
+  margin: 0 0 5px;
+}
+
+.db-list {
+  margin: 0;
+  -moz-column-count: 3;
+  -moz-column-gap: 20px;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 20px;
+  column-count: 3;
+  column-gap: 20px;
+  list-style-type: none;
+  border: 1px solid #6989c2;
+  border-radius: 4px;
+}
+
+.db-list::-webkit-scrollbar,
+.fin-list::-webkit-scrollbar {
+  background-color: transparent;
+  height: 5px;
+  width: 5px;
+}
+
+.db-list::-webkit-scrollbar-thumb,
+.fin-list::-webkit-scrollbar-thumb {
+  background-color: #B1C2DE;
+  /*border-radius: 2px;*/
+  /*border: 2px solid #B1C2DE;*/
+}
+
+.db-list::-webkit-scrollbar-track,
+.fin-list::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
+
+#fin_profile {
+  font-family: 'Maven Pro', sans-serif;
+}
+
+#fin_profile h3 {
+  margin: 0 0 15px;
+  color: #501981;
+}
+
+#fin_profile p {
+  margin: 0 0 5px;
+  cursor: pointer;
+}
+
+.bg-lighter-blue{
+  background-color: #f6f9fe;
+}
+.bg-white{
+  background-color: #ffffff;
+}
+.bg-light-blue{
+  background-color: #e7eef8;
+}
+
+.square {
+  width: 13px;
+  height: 13px;
+  background: #ffffff;
+  border: 2px solid #cccccc;
+  margin: 0px 5px;
+}
+
+.square-red{
+  background: #E35A2A;
+  border: 1px solid #E35A2A;
+}
+.square-blue{
+  background: #5FD3FC;
+  border: 1px solid #5FD3FC;
+
+}
+
+
+#circle {
+  width: 14px;
+  height: 14px;
+  background: #ffffff;
+  border: 2px solid #cccccc;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius: 10px;
+  margin-left: 15px;
+  margin-right: 5px;
+}
+
+.db-list{
+  max-height: 150px;
+  overflow: auto;
+  margin-right: 15px;
+}
+.fin-list{
+  max-height: 200px;
+  overflow: auto;
+}
+#network-legend{
+  display: inline-flex;
+}
+
+.color-violet{
+  color: #501981;
+}
+.color-blue{
+  color: #6989c2;
+}
+.color-bright-blue{
+  color: #5FD3FC;
+}
+.color-red{
+  color: #E35A2A;
+}
+
+#haga-click{
+  background: url(icono-click-mini.png) no-repeat center;
+  min-height: 400px;
+  background-color: #e7eef8;
+  border: 0px solid #5FD3FC;
+  border-radius: 8px;
+  padding: 20px;
+}
+#haga-click2{
+  min-height: 400px;
+  background-color: #e7eef8;
+  border: 0px solid #5FD3FC;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color: #fff;
+    background-color: #5FD3FC;
+}
+

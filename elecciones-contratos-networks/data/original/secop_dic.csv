@@ -1,0 +1,51 @@
+id,label,id_original,ctype
+ano_secop,Año Cargue SECOP,Anno Cargue SECOP,Yea
+ent_nivel,Nivel Entidad,Nivel Entidad,Cat
+ent_nombre,Nombre de la Entidad,Nombre de la Entidad,Cat
+proc_tipo,Tipo de Proceso,Tipo de Proceso,Cat
+proc_status,Estado del Proceso,Estado del Proceso,Cat
+cont_reg,Regimen de Contratacion,Regimen de Contratacion,Cat
+cont_objeto,Objeto a Contratar,Objeto a Contratar,Txt
+cont_objeto_det,Detalle del Objeto a Contratar,Detalle del Objeto a Contratar,Txt
+cont_tipo,Tipo de Contrato,Tipo de Contrato,Cat
+muni_ejec,Municipios Ejecucion,Municipios Ejecucion,Gnm
+fecha_secop,Fecha de Cargue en el SECOP,Fecha de Cargue en el SECOP,Dat
+proc_num,Numero de Proceso,Numero de Proceso,Cat
+cont_num,Numero del Contrato,Numero del Contrato,Cat
+proc_cuantia,Cuantia Proceso,Cuantia Proceso,Num
+grupo_id,ID Grupo,ID Grupo,Cat
+grupo,Nombre Grupo,Nombre Grupo,Cat
+familia_id,ID Familia,ID Familia,Cat
+familia,Nombre Familia,Nombre Familia,Cat
+clase_id,ID Clase,ID Clase,Cat
+clase,Nombre Clase,Nombre Clase,Cat
+adjudicacion_id,ID Ajudicacion,ID Ajudicacion,Cat
+contratista_id_tipo,Tipo Identifi del Contratista,Tipo Identifi del Contratista,Cat
+contratista_id,Identificacion del Contratista,Identificacion del Contratista,Cat
+contratista_nombre,Nom Raz Social Contratista,Nom Raz Social Contratista,Cat
+contratista_depto_muni,Dpto y Muni Contratista,Dpto y Muni Contratista,Gnm
+rep_legal_id_tipo,Tipo Doc Representante Legal,Tipo Doc Representante Legal,Cat
+rep_legal_id,Identific del Represen Legal,Identific del Represen Legal,Cat
+rep_legal_nombre,Nombre del Represen Legal,Nombre del Represen Legal,Cat
+cont_firma_ano,Anno Firma del Contrato,Anno Firma del Contrato,Yea
+cont_firma_fecha,Fecha de Firma del Contrato,Fecha de Firma del Contrato,Dat
+cont_ini_fecha,Fecha Ini Ejec Contrato,Fecha Ini Ejec Contrato,Dat
+cont_ejec_plazo,Plazo de Ejec del Contrato,Plazo de Ejec del Contrato,Num
+cont_ejec_unid,Rango de Ejec del Contrato,Rango de Ejec del Contrato,Cat
+cont_adi_dias,Tiempo Adiciones en Dias,Tiempo Adiciones en Dias,Num
+cont_adi_meses,Tiempo Adiciones en Meses,Tiempo Adiciones en Meses,Num
+cont_fin_ejec_fecha,Fecha Fin Ejec Contrato,Fecha Fin Ejec Contrato,Dat
+presup_compromiso,Compromiso Presupuestal,Compromiso Presupuestal,Cat
+moneda,Moneda,Moneda,Cat
+cont_cuantia,Cuantía Contrato,Cuantia Contrato,Num
+cont_adi_valor_tot,Valor Total de Adiciones,Valor Total de Adiciones,Num
+cont_valor_tot,Valor Contrato con Adiciones,Valor Contrato con Adiciones,Num
+cont_objeto_firma,Objeto del Contrato a la Firma,Objeto del Contrato a la Firma,Txt
+recursos_id,ID Origen de los Recursos,ID Origen de los Recursos,Cat
+recursos,Origen de los Recursos,Origen de los Recursos,Cat
+bpin,Codigo BPIN,Codigo BPIN,Cat
+proponentes,Proponentes Seleccionados,Proponentes Seleccionados,Txt
+proponentes_calif,Calificacion Definitiva,Calificacion Definitiva,Txt
+unidad_ejec_id,ID Sub Unidad Ejecutora,ID Sub Unidad Ejecutora,Cat
+unidad_ejec_nombre,Nombre Sub Unidad Ejecutora,Nombre Sub Unidad Ejecutora,Cat
+ruta_secop1,Ruta Proceso en SECOP I,Ruta Proceso en SECOP I,Cat

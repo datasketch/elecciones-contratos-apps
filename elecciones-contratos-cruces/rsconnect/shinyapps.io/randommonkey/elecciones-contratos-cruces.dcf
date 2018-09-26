@@ -1,0 +1,12 @@
+name: elecciones-contratos-cruces
+title: elecciones-contratos-cruces
+username:
+account: randommonkey
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 452900
+bundleId: 1590972
+url: https://randommonkey.shinyapps.io/elecciones-contratos-cruces/
+when: 1537243418.02589
+asMultiple: FALSE
+asStatic: FALSE

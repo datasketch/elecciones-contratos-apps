@@ -1,0 +1,31 @@
+id,label,ctype,cformat,cdescription
+cargo,Corporación o Cargo,Cat,NA,NA
+cand_departamento,Departamento,Cat,NA,NA
+org_politica,Organizacion Politica,Cat,NA,NA
+cand_iden,Identificacion Candidato,Num,NA,NA
+cand_nombre,Nombre Candidato,Cat,NA,NA
+cand_eleg,Elegido,Pct,NA,NA
+persona_juridica,Tipo Persona,Cat,NA,NA
+fin_nombre,Nombre de la Persona,Cat,NA,NA
+fin_departamento,Departamento Ingreso,Cat,NA,NA
+fin_municipio,Ciudad Ingreso,Cat,NA,NA
+fin_tipo_iden,Tipo de Identificación,Cat,NA,NA
+fin_iden,Numero de Identificación,Num,NA,NA
+campana,campaña,Cat,NA,NA
+uid,Unique ID,NA,NA,NA
+name,Nombre,NA,NA,NA
+tipo,Tipo,NA,NA,NA
+tipo_iden,Tipo Identificación,NA,NA,NA
+cont_n_contratista,Número total de contratos,NA,NA,NA
+cont_tot_contratista,Valor total de contratos,NA,NA,NA
+cont_n_rep_legal,Número total de contratos (Rep. Legal),NA,NA,NA
+cont_tot_rep_legal,Valor total de contratos (Rep. Legal),NA,NA,NA
+fecha_consulta,Fecha Consulta,NA,NA,NA
+db_procuraduria,Procuraduria,NA,NA,NA
+db_sisben,Sisben,NA,NA,NA
+db_contaduria,Contaduria,NA,NA,NA
+db_contraloria,Contraloria,NA,NA,NA
+db_policia,Policia,NA,NA,NA
+db_simit,Simit,NA,NA,NA
+db_registraduria_mesa,Mesa Registraduría,NA,NA,NA
+db_secop,Secop,NA,NA,NA
