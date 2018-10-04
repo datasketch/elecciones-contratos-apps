@@ -25,6 +25,8 @@ shinyUI(
                )
       ),
       tabPanel("CANDIDATOS",
+               p("En esta sección puede ver el top 10, 20, 30 y 50 de candidatos 
+                 que han tenido más número de financiadores, más financiación, financiadores con más contratos, entre otras."),
                div(class = "twoCols",
                    div(
                      uiOutput('varCand'),
@@ -35,6 +37,7 @@ shinyUI(
                      highchartOutput('vizCand', width = 650, height = 500)))
       ),
       tabPanel("DEPARTAMENTO",
+               p("En esta sección puede observar el total de candidatos o financiadores y total o promedio de gastos o aportes en campaña por departamento."),
                div(class = "twoCols",
                    div(
                      uiOutput('deptoGeneral'),

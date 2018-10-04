@@ -39,8 +39,7 @@ body {
   margin: 0 0 5px;
 }
 
-.db-list {
-  margin: 0;
+.col-dbList {
   -moz-column-count: 3;
   -moz-column-gap: 20px;
   -webkit-column-count: 3;
@@ -48,6 +47,10 @@ body {
   column-count: 3;
   column-gap: 20px;
   list-style-type: none;
+}
+
+.db-list {
+  margin: 0;
   border: 1px solid #6989c2;
   border-radius: 4px;
 }

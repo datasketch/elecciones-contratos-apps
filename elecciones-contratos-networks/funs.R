@@ -8,9 +8,12 @@ renderNode <- function(n, dics, remove_na = FALSE){
   if(remove_na){
     dt <- dt %>% filter(!is.na(val))
   }
-  dbInfo <- HTML(paste0("<ul class='db-list'>",
+  dbInfo <- HTML(paste0(
+    "<div class='db-list'>
+    <p style = 'font-size:15px;font-weight: 600; margin-left: 3%; margin-top: 1%;'>Reportes del candidato en otras bases de datos públicas</p>",
+                        "<ul class = 'col-dbList'>",
                         paste0(glue_data(dt, "<li>{label}:<strong> {val}</strong></li>"),collapse = "\n"),
-                        "</ul>"))
+                        "</ul></div>"))
   tagList(
     fluidRow(
       column(12,
@@ -27,6 +30,7 @@ renderNode <- function(n, dics, remove_na = FALSE){
 }
 
 renderNodeFin <- function(n){
+
   tagList(
     fluidRow(
       column(12, class="color-blue",
@@ -36,7 +40,7 @@ renderNodeFin <- function(n){
              p(glue("Departamento del financiador: ",n$fin_departamento)),
              p(glue("Municipio del financiador: ",n$fin_municipio)),
              p(glue("Número de contratos en SECOP: ",n$cont_n_contratista)),
-             p(glue("Total monto contratos en SECOP:", n$cont_tot_contratista))
+             p(glue("Total monto contratos en SECOP: ", paste0('$', format(as.numeric(n$cont_tot_contratista), big.mark = ',', small.mark = '.',  scientific = F))))
              
       )
     )
@@ -102,7 +106,10 @@ networkChart <- function(nodesFin, edgesFin, selectedValue = NULL, dics){
   nodesFin$color[nodesFin$persona_juridica == "Persona Natural"] <- "#E35A2A"
   str <- glue_data(ld,"{label_n_contratista}:{cont_n_contratista}<br>{label_tot_contratista}:{cont_tot_contratista}<br>")
   nodesFin$title <- str
-  visNetwork(nodesFin, edgesFin, width = "100%")
+  visNetwork(nodesFin, edgesFin, width = "100%") 
+  #%>%
+    #visPhysics(solver = "forceAtlas2Based",
+    #           forceAtlas2Based = list(gravitationalConstant = -200))
 }
 
 

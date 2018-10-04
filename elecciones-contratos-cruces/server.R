@@ -42,17 +42,17 @@ shinyServer(function(input, output, session){
       horLabel <- ifelse(input$vizCrucesOptsOrientation != "Horizontal",
                          selectedNumVar, selectedCatVar)
       h <- hgch_bar_CatNum(df, orientation = input$vizCrucesOptsOrientation,
-                           horLabel = "", verLabel = "")
+                           horLabel = "", verLabel = "", export = TRUE)
     }else{
       selectedGrpVar <- input$selectedGrpVar
       df <- cruces %>% select(one_of(c(selectedGrpVar, selectedCatVar, selectedNumVar)))
       h <- hgch_bar_grouped_CatCatNum(df, orientation = input$vizCrucesOptsOrientation,
-                                      horLabel = "", verLabel = "")
+                                      horLabel = "", verLabel = "", export = TRUE)
     }
     h
   })
 
-  
+
   
 # Candidatos --------------------------------------------------------------
 
@@ -104,19 +104,19 @@ shinyServer(function(input, output, session){
     tyviz <- input$vizTypeCts
     if (ncol(df) == 3) {
       if (tyviz == 'Barras') {
-        h <- hgch_bar_grouped_CatCatNum(df) }
+        h <- hgch_bar_grouped_CatCatNum(df, export = TRUE) }
       if (tyviz == 'Stack') {
-        h <- hgch_bar_stacked_100_CatCatNum(df) }
+        h <- hgch_bar_stacked_100_CatCatNum(df, export = TRUE) }
       if (tyviz == 'Líneas') {
-        h <- hgch_line_CatOcaNum(df)
+        h <- hgch_line_CatOcaNum(df, export = TRUE)
       }
     } else {
       if (tyviz == 'Barras') {
-        h <- hgch_bar_CatNum(df) }
+        h <- hgch_bar_CatNum(df, export = TRUE) }
       if (tyviz == 'Pie') {
-        h <- hgch_pie_CatNum(df) }
+        h <- hgch_pie_CatNum(df, export = TRUE) }
       if (tyviz == 'Dona') {
-        h <- hgch_donut_CatNum(df)
+        h <- hgch_donut_CatNum(df, export = TRUE)
       }
     }
     
@@ -192,19 +192,19 @@ shinyServer(function(input, output, session){
     tyviz <- input$vizType
     if (ncol(df) == 3) {
       if (tyviz == 'Barras') {
-        h <- hgch_bar_grouped_CatCatNum(df) }
+        h <- hgch_bar_grouped_CatCatNum(df, export = TRUE) }
       if (tyviz == 'Stack') {
-        h <- hgch_bar_stacked_100_CatCatNum(df) }
+        h <- hgch_bar_stacked_100_CatCatNum(df, export = TRUE) }
       if (tyviz == 'Líneas') {
-        h <- hgch_line_CatOcaNum(df)
+        h <- hgch_line_CatOcaNum(df, export = TRUE)
       }
     } else {
       if (tyviz == 'Barras') {
-        h <- hgch_bar_CatNum(df) }
+        h <- hgch_bar_CatNum(df, export = TRUE) }
       if (tyviz == 'Pie') {
-        h <- hgch_pie_CatNum(df) }
+        h <- hgch_pie_CatNum(df, export = TRUE) }
       if (tyviz == 'Dona') {
-        h <- hgch_donut_CatNum(df)
+        h <- hgch_donut_CatNum(df, export = TRUE)
       }
     }
     
