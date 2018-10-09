@@ -46,7 +46,8 @@ shinyUI(
             div(class="square"),span("Tiene contratos en SECOP"),
             div(id="circle"), span("No tiene contratos"),
             div(class="square square-blue"),span("Empresa"),
-            div(class="square square-red"),span("Persona")
+            div(class="square square-red"),span("Persona"),
+            div(class="circleborder"),span("Autofinanciación")
              ),
         visNetworkOutput("network")
       ),

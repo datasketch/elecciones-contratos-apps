@@ -1,0 +1,27 @@
+id,id_corregido,base,incluir,titulos
+Tipo Persona,Tipo de persona,Cuentas claras,SI,NA
+Nombre de la Persona,NA,Cuentas claras,id,NA
+Valor,Valor financiado,Cuentas claras,SI,NA
+Numero de Identificación,NA,Cuentas claras,id,NA
+Parentesco,Parentesco del financiador,Cuentas claras,SI,Financiadores parientes de candidatos que tienen contratos
+Partido Coalicion,Partido o coalición,Cuentas claras,SI,Partidos o coaliciones a los que pertenencen los financiadores que tienen contratos
+campaña,Campaña electoral,Cuentas claras,filtro,"Este es el primer filtro, no es una variable a cruzar en sí. Es lo primero que debe seleccionar el usuario a través de Check box"
+Nivel Entidad,Nivel de la Entidad,SECOP,SI,Nivel de la Entidad en el que los financiadores han firmado contratos
+Tipo de Proceso,Tipo de proceso de contratación,SECOP,SI,Proceso de contratación por el que los financiadores obtuvieron los contratos
+Estado del Proceso,Estado del proceso de contratación,SECOP,SI,Estado del proceso de contratación de los financiadores a septiembre 2018?(especificar fecha de corte de la info)
+Tipo de Contrato,Tipo de contrato,SECOP,SI,Tipo de contrato que han firmado los financiadores a septiembre 2018?(especificar fecha de corte de la info)
+Municipios Ejecucion,Municipio de ejecución del contrato,SECOP,SI,Municipios en donde los financiadores ejecutan contratos (especificar fecha de corte de la info)
+Cuantia Proceso,Cuantía del contrato,SECOP,NO,Cuantía de los contratos que han firmado los financiadores a …. (especificar fecha de corte de la info)
+Nombre Grupo,Objeto del contrato,SECOP,SI,Objeto de los contratos que han firmado los financiadores a ... (especificar fecha de corte de la info)
+Anno Firma del Contrato,Año de la firma del contrato,SECOP,SI,Contratos otorgados a financiadores por año (especificar fecha de corte de la info)
+Plazo de Ejec del Contrato,Plazo de ejecución del contrato,SECOP,SI,Plazo de ejecución de los contratos otorgados a financiadores
+Rango de Ejec del Contrato,NA,SECOP,id,NA
+Tiempo Adiciones en Dias,Tiempo de adición al contrato,SECOP,SI,Tiempo de adición que se ha dado a los contratos otorgados a financiadores
+Moneda,NA,SECOP,filtro,NA
+Cuantia Contrato,Cuantía del contrato,SECOP,id,Cuantía de los contratos otorgados a financiadores
+Valor Total de Adiciones,Valor total de adiciones,SECOP,id,Valor total de adiciones a los contratos otorgados a financiadores
+Valor Contrato con Adiciones,Valor del contrato con adiciones,SECOP,id,Valor total de los contratos (con adiciones) otorgados a financiadores
+Origen de los Recursos,Origen de los recursos,SECOP,SI,Origen de los recursos de los contratos otorgados a financiadores
+Rango cuantía,Rango cuantía,SECOP,SI,Rangos de cuantía de los contratos otorgados a financiadores
+Rango adiciones,Rango adiciones,SECOP,SI,Rangos del valor total de adiciones a los contratos otorgados a financiadores
+Rango Aporte,Rango financiación,SECOP,SI,Número de contratos de financiadores por rango del valor financiado

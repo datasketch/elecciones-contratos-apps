@@ -98,6 +98,15 @@ body {
   background-color: #e7eef8;
 }
 
+
+.circleborder {
+  width: 13px;
+  height: 13px;
+  background: #ffffff;
+  border: 2px solid #cccccc;
+  margin: 0px 5px;
+}
+
 .square {
   width: 13px;
   height: 13px;
@@ -150,6 +159,9 @@ body {
 }
 .color-bright-blue{
   color: #5FD3FC;
+  font-weight: 700;
+  font-size: 31px;
+  margin-top: 1%;
 }
 .color-red{
   color: #E35A2A;

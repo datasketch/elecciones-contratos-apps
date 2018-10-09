@@ -10,7 +10,7 @@ renderNode <- function(n, dics, remove_na = FALSE){
   }
   dbInfo <- HTML(paste0(
     "<div class='db-list'>
-    <p style = 'font-size:15px;font-weight: 600; margin-left: 3%; margin-top: 1%;'>Reportes del candidato en otras bases de datos públicas</p>",
+    <p style = 'font-size:15px;font-weight: 600; margin-left: 3%; margin-top: 1%;'>Reportes del candidato en otras bases de datos públicas:</p>",
                         "<ul class = 'col-dbList'>",
                         paste0(glue_data(dt, "<li>{label}:<strong> {val}</strong></li>"),collapse = "\n"),
                         "</ul></div>"))

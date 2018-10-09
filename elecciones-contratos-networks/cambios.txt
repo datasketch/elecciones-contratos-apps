@@ -1,0 +1,16 @@
+# aclarar mejor las convenciones:
+
+cuadro azul -> Persona juridica  financiadora con contratos en secop
+cuadro rojo -> Persona Natuta financiadora ...
+circulo azul -> Persona juridica  financiadora sin contratos en secop 
+circulo rojo -> 
+
+1. circulo que representa al cadidato cambiar por muñeco NN
+
+aro  cambiar de color y agregar leyenda -> Financiación con recursos propios
+
+#limpiar base contratos y dejar en mayuscula las siglas.
+
+
+
+
