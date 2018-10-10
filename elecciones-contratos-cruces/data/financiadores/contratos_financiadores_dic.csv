@@ -1,27 +1,27 @@
-id,id_corregido,base,incluir,titulos
-Tipo Persona,Tipo de persona,Cuentas claras,SI,NA
-Nombre de la Persona,NA,Cuentas claras,id,NA
-Valor,Valor financiado,Cuentas claras,id,NA
-Numero de Identificación,NA,Cuentas claras,id,NA
-Parentesco,Parentesco del financiador,Cuentas claras,SI,Financiadores parientes de candidatos que tienen contratos
-Partido Coalicion,Partido o coalición,Cuentas claras,no,Partidos o coaliciones a los que pertenencen los financiadores que tienen contratos
-campaña,Campaña electoral,Cuentas claras,filtro,"Este es el primer filtro, no es una variable a cruzar en sí. Es lo primero que debe seleccionar el usuario a través de Check box"
-Nivel Entidad,Nivel de la Entidad,SECOP,SI,Nivel de la Entidad en el que los financiadores han firmado contratos
-Tipo de Proceso,Tipo de proceso de contratación,SECOP,SI,Proceso de contratación por el que los financiadores obtuvieron los contratos
-Estado del Proceso,Estado del proceso de contratación,SECOP,SI,Estado del proceso de contratación de los financiadores
-Tipo de Contrato,Tipo de contrato,SECOP,SI,Tipo de contrato que han firmado los financiadores
-Municipios Ejecucion,Departamento de ejecución del contrato,SECOP,SI,Municipios en donde los financiadores ejecutan contratos 
-Cuantia Proceso,Cuantía del contrato,SECOP,NO,Cuantía de los contratos que han firmado los financiadores
-Nombre Grupo,Objeto del contrato,SECOP,SI,Objeto de los contratos que han firmado los financiadores
-Anno Firma del Contrato,Año de la firma del contrato,SECOP,NO,Contratos otorgados a financiadores por año
-Plazo de Ejec del Contrato,Plazo de ejecución del contrato,SECOP,SI,Plazo de ejecución de los contratos otorgados a financiadores
-Rango de Ejec del Contrato,NA,SECOP,id,NA
-Tiempo Adiciones en Dias,Tiempo de adición al contrato,SECOP,SI,Tiempo de adición que se ha dado a los contratos otorgados a financiadores
-Moneda,NA,SECOP,filtro,NA
-Cuantia Contrato,Cuantía del contrato,SECOP,id,Cuantía de los contratos otorgados a financiadores
-Valor Total de Adiciones,Valor total de adiciones,SECOP,id,Valor total de adiciones a los contratos otorgados a financiadores
-Valor Contrato con Adiciones,Valor del contrato con adiciones,SECOP,id,Valor total de los contratos (con adiciones) otorgados a financiadores
-Origen de los Recursos,Origen de los recursos,SECOP,SI,Origen de los recursos de los contratos otorgados a financiadores
-Rango cuantía,Cuantía del contrato,SECOP,SI,Rangos de cuantía de los contratos otorgados a financiadores
-Rango adiciones,Valor total de adiciones,SECOP,SI,Rangos del valor total de adiciones a los contratos otorgados a financiadores
-Rango total,Valor del contrato con adiciones,SECOP,SI,Número de contratos de financiadores por rango del valor financiado
+id,id_corregido,base,incluir,titulos,Descripcion
+Tipo Persona,Tipo de persona,Cuentas claras,SI,Número de contratos por tipo de financiador,"Esta variable se refiere a la clasificación que determina la capacidad legal para desarrollar actividades dentro y fuera del país, contiene las categorías: persona natural y persona jurídica."
+Nombre de la Persona,,Cuentas claras,id,,
+Valor,Valor finciado,Cuentas claras,id,,
+Numero de Identificación,,Cuentas claras,id,,
+Parentesco,Parentesco del financiador,Cuentas claras,SI,Financiadores parientes de candidatos que tienen contratos,Esta variable se refiere al parentesco entre los financiadores y los candidatos que recibieron sus aportes.
+Partido Coalicion,Partido o coalición,Cuentas claras,no,Partidos o coaliciones a los que pertenencen los financiadores que tienen contratos,
+campaña,Campaña electoral,Cuentas claras,filtro,"Este es el primer filtro, no es u variable a cruzar en sí­. Es lo primero que debe seleccionar el usuario a través de Check box",
+Nivel Entidad,Nivel de la Entidad,SECOP,SI,Nivel de la Entidad en el que los financiadores han firmado contratos,"Esta variable hace referencia al Nivel de la Entidad en la que los financiadores obtuvieron sus contratos, contiene las categorías: Territorial y Nacional."
+Tipo de Proceso,Modalidad de selección,SECOP,SI,Proceso de contratación por el que los financiadores obtuvieron los contratos,"Esta variable contiene las categorías dispuestas en el marco legal de la contratación pública en Colombia, según lo previsto  en las leyes 80 de 1993 y 1150 de 2007, y el decreto 1510 de 2013, donde se establecen  los procedimientos para contratar y  las modalidades de selección."
+Estado del Proceso,Estado del proceso de contratación,SECOP,SI,Estado del proceso de contratación de los financiadores,Esta variable hace referencia al estado en que se encuentra el proceso de contratación.
+Tipo de Contrato,Tipo de contrato,SECOP,SI,Tipo de contrato que han firmado los financiadores,Esta variable hace referencia a los tipos de contrato que han firmado los financiadores.
+Municipios Ejecucion,Departamento de ejecución del contrato,SECOP,SI,Departamentos en donde los financiadores ejecutan contratos ,Esta variable corresponde a los territorios en los que los financiadores han ejecutado los contratos obtenidos.
+Cuantia Proceso,Cuantí­a del contrato,SECOP,NO,Cuantí­a de los contratos que han firmado los financiadores,
+Nombre Grupo,Objeto del contrato,SECOP,SI,Objeto de los contratos que han firmado los financiadores,Esta variable hace referencia al objeto de los contratos que han firmado los financiadores de campañas electorales.
+Anno Firma del Contrato,Año de la firma del contrato,SECOP,NO,Contratos otorgados a financiadores por aí±o,
+Plazo de Ejec del Contrato,Plazo de ejecución del contrato,SECOP,SI,Plazo de ejecución de los contratos otorgados a financiadores,Esta variable evidencia el plazo de ejecución de los contratos otorgados a financiadores de campañas electorales.
+Rango de Ejec del Contrato,,SECOP,id,,
+Tiempo Adiciones en Dias,Tiempo de adición al contrato,SECOP,SI,Tiempo de adición que se ha dado a los contratos otorgados a financiadores,Esta variable evidencia el tiempo adiciol otorgado para la ejecución de los contratos obtenidos por financiadores de campañas electorales.
+Moneda,,SECOP,filtro,,
+Cuantia Contrato,Cuantí­a del contrato,SECOP,id,Cuantí­a de los contratos otorgados a financiadores,Esta variable evidencia el valor de los contratos que han sido otorgados a los financiadores de campañas electorales.
+Valor Total de Adiciones,Valor total de adiciones,SECOP,id,Valor total de adiciones a los contratos otorgados a financiadores,Esta variable refleja el valor de las adiciones a los contratos que han sido otorgados a los financiadores de campañas electorales.
+Valor Contrato con Adiciones,Valor del contrato con adiciones,SECOP,id,Valor total de los contratos (con adiciones) otorgados a financiadores,"Esta variable refleja el valor total de los contratos que han sido otorgados a los financiadores de campañas electorales, incluyendo el monto de las adiciones."
+Origen de los Recursos,Origen de los recursos,SECOP,SI,Origen de los recursos de los contratos otorgados a financiadores,Esta variable se refiere al origen de los recursos públicos con los que se pagaron los contratos otorgados a los financiadores de campañas electorales.
+Rango cuantía,Cuantí­a del contrato,SECOP,SI,Rangos de cuantí­a de los contratos otorgados a financiadores,Esta variable evidencia el valor de los contratos que han sido otorgados a los financiadores de campañas electorales.
+Rango adiciones,Valor total de adiciones,SECOP,SI,Rangos del valor total de adiciones a los contratos otorgados a financiadores,Esta variable refleja el valor de las adiciones a los contratos que han sido otorgados a los financiadores de campañas electorales.
+Rango total,Valor del contrato con adiciones,SECOP,SI,Número de contratos de financiadores por rango del valor finciado,"Esta variable refleja el valor total de los contratos que han sido otorgados a los financiadores de campañas electorales, incluyendo el monto de las adiciones."

@@ -56,7 +56,7 @@ getFinNetwork <- function(node_id, nodes, edges,
   edg0 <- edges %>% filter(from == node_id)
   edgesFin <- edg0 %>% 
     mutate(width = fin_valor/max(fin_valor)*8,
-           label = round(fin_valor/1000000,1))
+           label = paste0('$', round(fin_valor/1000000,1)))
   nFin <- nrow(edgesFin)
   if(!is.null(top)){
     edgesFin <- edgesFin %>% top_n(top, fin_valor)
@@ -97,6 +97,7 @@ networkChart <- function(nodesFin, edgesFin, selectedValue = NULL, dics){
   # nodesFin$value <- vals/max(vals, na.rm = TRUE)*5
   # nodesFin$value[is.na(nodesFin$value)] <- 3
   nodesFin$value[nodesFin$shape == "square"] <- 0.8 * nodesFin$value[nodesFin$shape == "square"]
+  nodesFin$shape[grepl('Candidato', nodesFin$tipo)] <- "circularImage"
   label_n_contratista <- getVarLabel("cont_n_contratista", dics)
   label_tot_contratista <- getVarLabel("cont_tot_contratista", dics)
   ld <- nodesFin[c("cont_n_contratista","cont_tot_contratista")]
@@ -106,6 +107,11 @@ networkChart <- function(nodesFin, edgesFin, selectedValue = NULL, dics){
   nodesFin$color[nodesFin$persona_juridica == "Persona Natural"] <- "#E35A2A"
   str <- glue_data(ld,"{label_n_contratista}:{cont_n_contratista}<br>{label_tot_contratista}:{cont_tot_contratista}<br>")
   nodesFin$title <- str
+  nodesFin$image <- ifelse(grepl('Candidato', nodesFin$tipo), 'http://www.cursillosdecristiandad.cl/cursillo/images/vocalias/Vacante.jpg', "")
+  nodesFin$label <- str_wrap(str_to_title(nodesFin$label), 10)
+  nodesFin$value <- ifelse(grepl('Candidato', nodesFin$tipo), 7, 3)
+  #assign("odo", nodesFin, envir = globalenv())
+  #assign("edg", edgesFin, envir = globalenv())
   visNetwork(nodesFin, edgesFin, width = "100%") 
   #%>%
     #visPhysics(solver = "forceAtlas2Based",

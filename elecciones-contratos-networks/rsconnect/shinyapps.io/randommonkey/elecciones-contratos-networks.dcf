@@ -5,8 +5,9 @@ account: randommonkey
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 450772
-bundleId: 1625361
+bundleId: 1635530
 url: https://randommonkey.shinyapps.io/elecciones-contratos-networks/
-when: 1538754847.66002
+when: 1539207084.89572
 asMultiple: FALSE
 asStatic: FALSE
+ignoredFiles: cambios.txt

@@ -21,11 +21,11 @@ cont_tot_contratista,Valor total de contratos,NA,NA,NA
 cont_n_rep_legal,Número total de contratos (Rep. Legal),NA,NA,NA
 cont_tot_rep_legal,Valor total de contratos (Rep. Legal),NA,NA,NA
 fecha_consulta,Fecha Consulta,NA,NA,NA
-db_procuraduria,Procuraduria,NA,NA,NA
-db_sisben,Sisben,NA,NA,NA
-db_contaduria,Contaduria,NA,NA,NA
-db_contraloria,Contraloria,NA,NA,NA
-db_policia,Policia,NA,NA,NA
-db_simit,Simit,NA,NA,NA
+db_procuraduria,Procuraduría,NA,NA,NA
+db_sisben,SISBEN,NA,NA,NA
+db_contaduria,Contaduría,NA,NA,NA
+db_contraloria,Contraloría,NA,NA,NA
+db_policia,Policía,NA,NA,NA
+db_simit,SIMIT,NA,NA,NA
 db_registraduria_mesa,Mesa Registraduría,NA,NA,NA
-db_secop,Secop,NA,NA,NA
+db_secop,SECOP,NA,NA,NA

@@ -133,3 +133,16 @@ write_csv(edges, "data/clean/edges.csv")
 #            municipio %in% munis)
 # jsonlite::write_json(search, "data/clean/search.json", auto_unbox = TRUE)  
 
+
+# csv to xlsx data
+
+lissF <- list.files('data/descarga/csv/')
+library(rio)
+map(lissF, function(x) {
+ d <- read_csv(paste0('data/descarga/csv/', x))
+ ff <- gsub('.csv', '.xlsx', x)
+ export(d, paste0('data/descarga/xlsx/', ff))
+})
+
+
+

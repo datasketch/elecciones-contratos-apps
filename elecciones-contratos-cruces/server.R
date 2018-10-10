@@ -256,6 +256,12 @@ shinyServer(function(input, output, session){
   })
   
   
+  output$Descripcion <- renderUI({
+    varId <- input$varInteres
+    if (is.null(varId)) return()
+    desc <- dicFinanciadores$Descripcion[dicFinanciadores$id == varId]
+    HTML(paste0("<p><b>Descripción: </b>", desc,"</p>"))
+  })
   
   
   output$baseoo <- renderPrint({

@@ -44,19 +44,19 @@ shinyUI(
       column(6,class = "bg-white",
              div(class = "explRec", style="margin-top: -19%;",
                  div(class = "legendRec",
-                     HTML('<div class = "bullet bullet-blue"></div><span>Persona jurídica  financiadora sin contratos en secop</span>')
+                     HTML('<div class = "bullet bullet-blue"></div><span>Persona jurídica  financiadora <b>sin</b> contratos en secop</span>')
                  ),
                  div(class = "legendRec",
-                     HTML('<div class = "bullet bullet-orange"></div><span>Persona natural  financiadora sin contratos en secop</span>')
+                     HTML('<div class = "bullet bullet-orange"></div><span>Persona natural  financiadora <b>sin</b> contratos en secop</span>')
                  ),
                  div(class = "legendRec",
-                     HTML('<div class = "square square-blue"></div><span>Persona jurídica  financiadora con contratos en secop</span>')
+                     HTML('<div class = "square square-blue"></div><span>Persona jurídica  financiadora <b>con</b> contratos en secop</span>')
                  ),
                  div(class = "legendRec",
-                     HTML('<div class = "square square-red"></div><span>Persona natural  financiadora con contratos en secop</span>')
+                     HTML('<div class = "square square-red"></div><span>Persona natural  financiadora <b>con</b> contratos en secop</span>')
                  ),
                  div(class = "legendRec",
-                     HTML('<div class = "bullet bullet-border"></div><span>Financiación con recursos propios</span>')
+                     HTML('<div class = "bullet bullet-border"></div><span>Financiación <b>con</b> recursos propios</span>')
                  )
                  ),
         # div(id="network-legend",
@@ -66,7 +66,7 @@ shinyUI(
         #     div(class="square square-red"),span("Persona"),
         #     div(class="circleborder"),span("Autofinanciación")
         #      ),
-        visNetworkOutput("network")
+        visNetworkOutput("network", width = "100%", height = "500")
       ),
       column(6, class = "bg-white",
         uiOutput("fin_profile")
