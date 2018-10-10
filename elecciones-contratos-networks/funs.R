@@ -40,7 +40,7 @@ renderNodeFin <- function(n){
              p(glue("Departamento del financiador: ",n$fin_departamento)),
              p(glue("Municipio del financiador: ",n$fin_municipio)),
              p(glue("Número de contratos en SECOP: ",n$cont_n_contratista)),
-             p(glue("Total monto contratos en SECOP: ", paste0('$', format(as.numeric(n$cont_tot_contratista), big.mark = ',', small.mark = '.',  scientific = F))))
+             p(glue("Total monto contratos en SECOP: ", paste0(format(as.numeric(n$cont_tot_contratista), big.mark = ',', small.mark = '.',  scientific = F))))
              
       )
     )

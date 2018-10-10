@@ -42,13 +42,30 @@ shinyUI(
     ),
     fluidRow(
       column(6,class = "bg-white",
-        div(id="network-legend",
-            div(class="square"),span("Tiene contratos en SECOP"),
-            div(id="circle"), span("No tiene contratos"),
-            div(class="square square-blue"),span("Empresa"),
-            div(class="square square-red"),span("Persona"),
-            div(class="circleborder"),span("Autofinanciación")
-             ),
+             div(class = "explRec", style="margin-top: -19%;",
+                 div(class = "legendRec",
+                     HTML('<div class = "bullet bullet-blue"></div><span>Persona jurídica  financiadora sin contratos en secop</span>')
+                 ),
+                 div(class = "legendRec",
+                     HTML('<div class = "bullet bullet-orange"></div><span>Persona natural  financiadora sin contratos en secop</span>')
+                 ),
+                 div(class = "legendRec",
+                     HTML('<div class = "square square-blue"></div><span>Persona jurídica  financiadora con contratos en secop</span>')
+                 ),
+                 div(class = "legendRec",
+                     HTML('<div class = "square square-red"></div><span>Persona natural  financiadora con contratos en secop</span>')
+                 ),
+                 div(class = "legendRec",
+                     HTML('<div class = "bullet bullet-border"></div><span>Financiación con recursos propios</span>')
+                 )
+                 ),
+        # div(id="network-legend",
+        #     div(class="square"),span("Tiene contratos en SECOP"),
+        #     div(id="circle"), span("No tiene contratos"),
+        #     div(class="square square-blue"),span("Empresa"),
+        #     div(class="square square-red"),span("Persona"),
+        #     div(class="circleborder"),span("Autofinanciación")
+        #      ),
         visNetworkOutput("network")
       ),
       column(6, class = "bg-white",

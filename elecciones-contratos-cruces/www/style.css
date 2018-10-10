@@ -59,7 +59,9 @@ body {
 
 
 .ContratosStyle {
-  display: inline-flex;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 35% 65%;
  }
  
  .grafico {

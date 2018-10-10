@@ -1,8 +1,24 @@
 financiadores <- read_csv('data/financiadores/contratos_financiadores_data.csv')
+
+
+financiadores$`Tiempo Adiciones en Dias`  <- ifelse(financiadores$`Tiempo Adiciones en Dias` >= 0 & financiadores$`Tiempo Adiciones en Dias` <= 30, "0 - 30",
+                                                    ifelse(financiadores$`Tiempo Adiciones en Dias` > 30 & financiadores$`Tiempo Adiciones en Dias` <= 59, "31 a 59",
+                                                            ifelse(financiadores$`Tiempo Adiciones en Dias` > 59 & financiadores$`Tiempo Adiciones en Dias` <= 89, "60 a 89",
+                                                                     ifelse(financiadores$`Tiempo Adiciones en Dias` > 89 & financiadores$`Tiempo Adiciones en Dias` <= 119, "90 a 119", ">= 120"))))
+                                                    
+  
+financiadores$`Municipios Ejecucion` <- trimws(gsub('-.*', '', financiadores$`Municipios Ejecucion`))
+  
+# financiadores$`Rango total` <- ifelse(financiadores$`Valor Contrato con Adiciones` >= 0 & financiadores$`Valor Contrato con Adiciones` <= 100000, "0 - 100,000",
+#                                       ifelse(financiadores$`Valor Contrato con Adiciones` > 100000 & financiadores$`Valor Contrato con Adiciones` <= 1000000, "100,001 - 1,000,000",
+#                                              ifelse(financiadores$`Valor Contrato con Adiciones` > 1000000 & financiadores$`Valor Contrato con Adiciones` <= 10000000, "1,000,001 - 10,000,000",
+#                                                            ifelse(financiadores$`Valor Contrato con Adiciones` > 10000000 & financiadores$`Valor Contrato con Adiciones` <= 100000000, "10,000,001 - 100,000,000",
+#                                                                   ifelse(financiadores$`Valor Contrato con Adiciones` > 100000000 & financiadores$`Valor Contrato con Adiciones` <= 1000000000, "100,000,001 - 1,000,000,000", "Más de 1,000,000,000")))))
+
 dicFinanciadores <- read_csv('data/financiadores/contratos_financiadores_dic.csv')
 nombresFin <- financiadores %>% 
                 select(NombrPersona = `Nombre de la Persona`, NumerodeIdentificación = `Numero de Identificación`) %>%
-                   distinct(`Numero de Identificación`, .keep_all = TRUE)
+                   distinct(NumerodeIdentificación, .keep_all = TRUE)
 
 shinyServer(function(input, output, session){
 
@@ -13,6 +29,7 @@ shinyServer(function(input, output, session){
     
   dElec <- reactive({
     elecId <- input$elecciones
+    if (is.null(elecId)) return()
     df <- financiadores %>% filter(campaña %in% elecId)
     df
   })
@@ -24,7 +41,7 @@ shinyServer(function(input, output, session){
 
   dt <- reactive({
     annioC <- input$secopFecha
-    
+    if (is.null(annioC)) return()
     if (annioC != 'Todos') {
     d <- dElec() %>% filter(`Anno Firma del Contrato` %in% annioC)
     } else {
@@ -97,7 +114,8 @@ shinyServer(function(input, output, session){
     
     d[is.na(d)] <- 'Información no reportada'
     d %>%
-      filter(elg != 'No Aplica')
+      filter(elg != 'No Aplica') %>% 
+      arrange(-totalFinanciadores)
   })
   
   
@@ -192,6 +210,7 @@ shinyServer(function(input, output, session){
     varId <-  gsub(' ', '', varId)
     d <- baseFin()
     names(d) <- gsub(' ', '', names(d))
+    d[is.na(d)] <- 'Información no reportada'
     
     if (annioC == 'Todos') {
     filtAni <- input$hcClicked$annio
@@ -221,7 +240,8 @@ shinyServer(function(input, output, session){
     } else {
       nF <- nrow(df)
     }
-    hgch_bar_CatNum(df, sliceN = nF)
+    hgch_bar_CatNum(df, sliceN = nF, sort = 'desc', horLabel = 'Nombre financiador', verLabel = 'Total contratos firmados',
+                    tooltip = list(pointFormat = '<b>{point.name}</b><br/><b>Total contratos: </b>{point.y}'))
   })
   
   observeEvent(input$hcClicked,{
