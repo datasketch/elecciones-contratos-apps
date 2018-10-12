@@ -34,7 +34,7 @@ cands <- nodes %>% filter(tipo %in% c("Candidato|Financiador","Candidato"))
 #node_id <- sample(cands$uid,1)
 initCands <- c("ALVARO URIBE VELEZ", "ARMANDO ALBERTO BENEDETTI VILLANEDA",
                "AURELIJUS RUTENIS ANTANAS MOCKUS SIVICKAS", 
-               "ALEJANDRO CHAR CHALJUB",
+               "ARTURO CHAR CHALJUB",
                "ENRIQUE PEÑALOSA LONDOÑO", "FEDERICO ANDRES GUTIERREZ ZULUAGA",
                "NORMAN MAURICE ARMITAGE CADAVID","CESAR OMAR ROJAS AYALA")
 uids <- nodes %>% filter(name %in% initCands) %>% pull(uid)

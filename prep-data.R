@@ -145,4 +145,7 @@ map(lissF, function(x) {
 })
 
 
+d1 <- read_csv('data/descarga/csv/db-public-elecciones-contratos.csv')
+export(d1, '')
+
 

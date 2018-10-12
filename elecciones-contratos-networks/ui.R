@@ -57,6 +57,9 @@ shinyUI(
                  ),
                  div(class = "legendRec",
                      HTML('<div class = "bullet bullet-border"></div><span>Financiación <b>con</b> recursos propios</span>')
+                 ),
+                 div(class = "legendRec",
+                     HTML('<div class = "incline-line"></div>Valor de la financiación en millones de pesos')
                  )
                  ),
         # div(id="network-legend",

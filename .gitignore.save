@@ -1,0 +1,7 @@
+data/original/*
+bg-white
+.DS_Store
+.Rproj.user/
+.Rproj.user
+.Rhistory
+elecciones-contratos-networks/data/original/secop_data.csv

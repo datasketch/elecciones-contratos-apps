@@ -215,3 +215,9 @@ body {
  display: flex; 
 }
 
+ .incline-line{
+   width: 13px;
+   border: 2px solid;
+   border-color: #b53229;
+   margin-right: 1%;
+    }

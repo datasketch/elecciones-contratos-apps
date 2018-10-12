@@ -1,6 +1,5 @@
 financiadores <- read_csv('data/financiadores/contratos_financiadores_data.csv')
 
-
 financiadores$`Tiempo Adiciones en Dias`  <- ifelse(financiadores$`Tiempo Adiciones en Dias` >= 0 & financiadores$`Tiempo Adiciones en Dias` <= 30, "0 - 30",
                                                     ifelse(financiadores$`Tiempo Adiciones en Dias` > 30 & financiadores$`Tiempo Adiciones en Dias` <= 59, "31 a 59",
                                                             ifelse(financiadores$`Tiempo Adiciones en Dias` > 59 & financiadores$`Tiempo Adiciones en Dias` <= 89, "60 a 89",
@@ -17,8 +16,8 @@ financiadores$`Municipios Ejecucion` <- trimws(gsub('-.*', '', financiadores$`Mu
 
 dicFinanciadores <- read_csv('data/financiadores/contratos_financiadores_dic.csv')
 nombresFin <- financiadores %>% 
-                select(NombrPersona = `Nombre de la Persona`, NumerodeIdentificación = `Numero de Identificación`) %>%
-                   distinct(NumerodeIdentificación, .keep_all = TRUE)
+                select(NombrPersona = `Nombre de la Persona`, NumerodeIdentificación = `Numero de Identificación`, campaña) 
+nombresFin <-  nombresFin[!duplicated(nombresFin[c("NumerodeIdentificación", "campaña")]),]
 
 shinyServer(function(input, output, session){
 
@@ -174,7 +173,9 @@ shinyServer(function(input, output, session){
                  pointFormat = paste0("<b>{point.category}:</b> {point.y}")) 
     } else {
       myClickFunc <-  JS("function(event) {Shiny.onInputChange('hcClicked',  {id:event.point.series.name, annio:event.point.category.name, timestamp: new Date().getTime()});}")
-      h <- hgch_line_CatYeaNum(financia(), horLabel = 'Número de financiadores con contratos en SECOP', verLabel = 'Año de la firma del contrato',
+      h <- hgch_line_CatYeaNum(financia(), 
+                               marks = c('.', ','),
+                               horLabel = 'Número de financiadores con contratos en SECOP', verLabel = 'Año de la firma del contrato',
                                tooltip = list(headerFormat = 'Clikea para ver financiadores destacados<br/>', 
                                               pointFormat = paste0("<b>Año firma del contrato: </b>{point.category}<br/><b>{series.name}: </b>{point.y}"))) %>% 
         hc_plotOptions(
@@ -225,24 +226,55 @@ shinyServer(function(input, output, session){
    
       d <- d %>%
         group_by_(varId, 'NumerodeIdentificación') %>%
-        dplyr::summarise(`Cuantía total de contratos` = sum(ValorContratoconAdiciones),
+        dplyr::summarise(#`Cuantía total de contratos` = sum(ValorContratoconAdiciones),
                          `Total contratos` = n()) %>%
         arrange(-`Total contratos`)
       d <- d[d[[varId]] == varFilt,]
       d <- d[,-1]
-      d %>% inner_join(nombresFin)
+      elecId <- input$elecciones
+      if (is.null(elecId)) return()
+      df <- nombresFin %>% filter(campaña %in% elecId)
+      
+      d %>% inner_join(df)
   })
   
   output$barraFinanciadores <- renderHighchart({
+    
+    myClickFunc <-  JS("function(event) {Shiny.onInputChange('ClickFinanciador',  {id:event.point.name, timestamp: new Date().getTime()});}")
     df <- baseTopFin() %>% select(NombrPersona, `Total contratos`)
     if (nrow(df) > 10) {
       nF <- 10 
     } else {
       nF <- nrow(df)
     }
-    hgch_bar_CatNum(df, sliceN = nF, sort = 'desc', horLabel = 'Nombre financiador', verLabel = 'Total contratos firmados',
-                    tooltip = list(pointFormat = '<b>{point.name}</b><br/><b>Total contratos: </b>{point.y}'))
+    hgch_bar_CatNum(df, sliceN = nF, sort = 'desc', horLabel = 'Nombre financiador',
+                    marks = c('.', ','),
+                    verLabel = 'Total contratos firmados',
+                    tooltip = list(pointFormat = '<b>{point.name}</b><br/><b>Total contratos: </b>{point.y}<br/><b>Da click para conocer candidatos financiados</b>')) %>% 
+      hc_plotOptions(
+        series = list(
+          cursor = 'pointer',
+          events = list(
+            click = myClickFunc
+          )
+        )
+      )
   })
+  
+  output$finBarClick <- renderTable({
+   NombFin <- input$ClickFinanciador$id
+   
+   if (is.null(NombFin)) return()
+   
+   idFin <- nombresFin %>% filter(NombrPersona %in% NombFin)
+   idFin <- idFin$NumerodeIdentificación
+   db <- src_sqlite("data/db.sqlite3")
+   d <- tbl(db, sql('SELECT * FROM cuentas_claras_data'))
+   infFin <- d %>% filter(`Numero de Identificación` %in% idFin)
+   data <- infFin %>% select(`Candidato financiado` = `Nombre Candidato`, `Organización Política del candidato` = `Organizacion Politica`, `Valor de la financiación` = Valor,  `Tipo Donacion`) %>% collect()
+   data
+  })
+  
   
   observeEvent(input$hcClicked,{
     showModal(
@@ -250,11 +282,20 @@ shinyServer(function(input, output, session){
         title = 'Financiadores',
         footer = modalButton("Cerrar"),
         easyClose = TRUE,
-        highchartOutput('barraFinanciadores')
+        highchartOutput('barraFinanciadores'),
+        downloadButton('allDataFin', 'Descargar todos los financiadores'),
+        tableOutput('finBarClick')
       )
     )
   })
   
+  
+  output$allDataFin <- downloadHandler(
+    "all_financiadores_contratos.csv",
+    content = function(file) {
+      d <- baseFin()
+      write_csv(d, file, na = '')
+    })
   
   output$Descripcion <- renderUI({
     varId <- input$varInteres

@@ -3,6 +3,7 @@ library(shinyjs)
 library(tidyverse)
 library(hgchmagic)
 library(stringr)
+library(RSQLite)
 
 numextract <- function(string){ 
   str_extract(string, "\\-*\\d+\\.*\\d*")
@@ -15,6 +16,6 @@ hcoptslang$downloadJPEG <- "Descarga en JPEG"
 hcoptslang$downloadPNG <- "Descarga en PNG"
 hcoptslang$downloadPDF <- "Descarga en PDF"
 hcoptslang$downloadSVG <- "Descarga en SVG"
-hcoptslang$thousandsSep <- ","
-
+hcoptslang$thousandsSep <- "."
+hcoptslang$decimalPoint <- ","
 options(highcharter.lang = hcoptslang)

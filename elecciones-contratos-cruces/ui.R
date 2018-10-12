@@ -21,8 +21,7 @@ shinyUI(
     ),
     div(class = "grafico",
     highchartOutput('barrasAgregadas', height = 550)
-    ))#,
-    #verbatimTextOutput('baseoo')
+    ))
    
   )
 )
