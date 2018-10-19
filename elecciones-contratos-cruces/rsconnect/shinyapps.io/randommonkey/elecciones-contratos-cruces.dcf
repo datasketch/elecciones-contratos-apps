@@ -5,8 +5,8 @@ account: randommonkey
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 452900
-bundleId: 1637317
+bundleId: 1652108
 url: https://randommonkey.shinyapps.io/elecciones-contratos-cruces/
-when: 1539273227.06415
+when: 1539980454.99119
 asMultiple: FALSE
 asStatic: FALSE

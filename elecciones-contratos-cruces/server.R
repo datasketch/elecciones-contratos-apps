@@ -200,7 +200,15 @@ shinyServer(function(input, output, session){
           symbolY= 30,
           menuItems = list('printChart', 'downloadJPEG', 'downloadPNG', 'downloadSVG', 'downloadPDF')
         )
-      ))
+      )) %>% 
+      hc_legend(
+        title = list(
+          text = 'Click para ocultar',
+          style = list(
+            fontStyle= 'italic'
+          )
+        )
+      )
   })
   
   

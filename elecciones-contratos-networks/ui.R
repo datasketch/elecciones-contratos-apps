@@ -42,7 +42,7 @@ shinyUI(
     ),
     fluidRow(
       column(6,class = "bg-white",
-             div(class = "explRec", style="margin-top: -19%;",
+             div(class = "explRec", style="margin-top: -15%;",
                  div(class = "legendRec",
                      HTML('<div class = "bullet bullet-blue"></div><span>Persona jurídica  financiadora <b>sin</b> contratos en secop</span>')
                  ),
